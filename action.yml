@@ -1,0 +1,37 @@
+name: works-on-my-machine-badge
+description: Update a repo-based badge JSON to reflect CI status
+inputs:
+  state:
+    description: success | failure | neutral
+    required: true
+  status-file:
+    description: Path to badge JSON in the repo
+    required: false
+    default: badge/status.json
+  label:
+    description: Badge label
+    required: false
+    default: works on my machine
+  message:
+    description: Badge message
+    required: false
+    default: apparently
+  color:
+    description: Badge color
+    required: false
+    default: green
+  comment-on-pr:
+    description: Comment on PR with the result
+    required: false
+    default: "false"
+  github-token:
+    description: GitHub token (defaults to GITHUB_TOKEN)
+    required: false
+  commit-message:
+    description: Commit message for status file update
+    required: false
+    default: "chore: update badge status"
+
+runs:
+  using: node20
+  main: dist/index.js
