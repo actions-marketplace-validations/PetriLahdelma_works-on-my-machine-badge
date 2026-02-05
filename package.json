@@ -17,7 +17,8 @@
     "build": "tsc -p tsconfig.json",
     "dev": "node dist/index.js",
     "lint": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node test/lib.test.js"
+    "test": "npm run build && node test/lib.test.js",
+    "render": "node scripts/render-hero.mjs && node scripts/render-og.mjs && node scripts/render-before-after.mjs && node scripts/render-readme.mjs"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
@@ -36,6 +37,7 @@
     "url": "https://github.com/PetriLahdelma/works-on-my-machine-badge/issues"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.11.30",
+    "playwright": "^1.49.0"
   }
 }
