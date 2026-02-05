@@ -1,0 +1,60 @@
+{
+  "name": "works-on-my-machine-badge",
+  "tagline": "A badge that reports the truth from CI.",
+  "accent": [
+    "#10b981",
+    "#22c55e"
+  ],
+  "logo": "assets/logo.svg",
+  "badges": [
+    {
+      "label": "version",
+      "value": "v0.1.0"
+    },
+    {
+      "label": "license",
+      "value": "MIT"
+    },
+    {
+      "label": "ci",
+      "value": "passing"
+    },
+    {
+      "label": "stars",
+      "value": "github"
+    }
+  ],
+  "badgesMd": [
+    {
+      "label": "CI",
+      "url": "https://github.com/PetriLahdelma/works-on-my-machine-badge/actions/workflows/ci.yml/badge.svg"
+    },
+    {
+      "label": "Release",
+      "url": "https://img.shields.io/github/v/release/PetriLahdelma/works-on-my-machine-badge"
+    },
+    {
+      "label": "License",
+      "url": "https://img.shields.io/github/license/PetriLahdelma/works-on-my-machine-badge"
+    },
+    {
+      "label": "Stars",
+      "url": "https://img.shields.io/github/stars/PetriLahdelma/works-on-my-machine-badge"
+    }
+  ],
+  "proof": "Proof: repo badge updates on real CI results.",
+  "beforeAfter": {
+    "before": "Green badges with no proof",
+    "after": "Badges tied to actual runs"
+  },
+  "quickstart": "```yaml\n- uses: PetriLahdelma/works-on-my-machine-badge@v0\n  with:\n    state: ${{ job.status }}\n```",
+  "demo": "```text\nhttps://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PetriLahdelma/works-on-my-machine-badge/main/badge/status.json\n```",
+  "why": "Badges should reflect reality. This uses CI to update status.json.",
+  "faq": "- **Is it repo-only?** Yes, no external services.\n- **Does it comment on PRs?** Optional.",
+  "contributing": "See `CONTRIBUTING.md` for local development.",
+  "license": "MIT",
+  "hero": {
+    "width": 1600,
+    "height": 900
+  }
+}
