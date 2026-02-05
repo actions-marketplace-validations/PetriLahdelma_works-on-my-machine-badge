@@ -1,61 +1,32 @@
 # works-on-my-machine-badge
 
-A GitHub Action that updates a repo-based badge JSON to reflect real CI status.
+![Hero](assets/hero.png)
 
-Tagline: Ship the truth. A badge that matches the build.
+![CI](https://github.com/PetriLahdelma/works-on-my-machine-badge/actions/workflows/ci.yml/badge.svg) ![Release](https://img.shields.io/github/v/release/PetriLahdelma/works-on-my-machine-badge) ![License](https://img.shields.io/github/license/PetriLahdelma/works-on-my-machine-badge) ![Stars](https://img.shields.io/github/stars/PetriLahdelma/works-on-my-machine-badge)
+
+A badge that reports the truth from CI.
 
 ## Quickstart
-Add this action after your tests:
 ```yaml
-- name: Update badge
-  uses: PetriLahdelma/works-on-my-machine-badge@v0
+- uses: PetriLahdelma/works-on-my-machine-badge@v0
   with:
     state: ${{ job.status }}
-    status-file: badge/status.json
-    comment-on-pr: true
 ```
 
 ## Demo
-The action writes a JSON file for shields.io dynamic badges.
-
-## Screenshots
-Placeholder: add screenshots in `docs/` and link them here.
-
-## Badge JSON
-`badge/status.json` looks like:
-```json
-{
-  "schemaVersion": 1,
-  "label": "works on my machine",
-  "message": "apparently",
-  "color": "green",
-  "state": "pass",
-  "updated": "2026-02-04T00:00:00.000Z"
-}
-```
-
-## Shields.io dynamic JSON badge
-Use a dynamic JSON badge pointing at the raw file:
 ```text
 https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/PetriLahdelma/works-on-my-machine-badge/main/badge/status.json
 ```
 
-## Inputs
-- `state` accepts `success`, `failure`, or `neutral`
-- `status-file` path to JSON file
-- `label`, `message`, `color`
-- `comment-on-pr` (`true` or `false`)
-- `github-token` (optional)
+## Why This Exists
+Badges should reflect reality. This uses CI to update status.json.
 
-## Humorous variants
-See `docs/variants.md` for ready-to-use message presets.
+## FAQ
+- **Is it repo-only?** Yes, no external services.
+- **Does it comment on PRs?** Optional.
 
-## Manual publish steps (optional)
-```bash
-npm login
-npm publish --access public
-```
-If the name is taken, consider scoped naming like `@petri-lahdelma/works-on-my-machine-badge`.
+## Contributing
+See `CONTRIBUTING.md` for local development.
 
 ## License
 MIT
